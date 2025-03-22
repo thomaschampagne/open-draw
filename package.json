@@ -1,19 +1,28 @@
 {
   "name": "open-draw",
-  "version": "1.0.0",
+  "version": "2025.03.22",
   "packageManager": "pnpm@10.6.5",
+  "description": "Open Draw",
+  "main": "index.html",
+  "homepage": "https://github.com/alexandrevilain/open-draw",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "rm -rf ./dist && tsc -b && vite build",
     "preview": "vite preview --host",
     "import:fonts": "rm -rf ./public/fonts && cp -r ./node_modules/@excalidraw/excalidraw/dist/prod/fonts/ ./public",
-    "integrate": "pnpm run upgrade:libs && pnpm run build",
-    "upgrade:libs": "pnpm up --latest && pnpm install @excalidraw/excalidraw@next",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier": "prettier ./src/**.{ts,tsx} --write",
+    "integrate": "pnpm run upgrade:package-manager && pnpm run upgrade:libs && pnpm run prettier && pnpm run lint:fix && pnpm run build && pnpm run bump:version",
+    "upgrade:libs": "pnpm up --latest && pnpm install @excalidraw/excalidraw@next && pnpm run import:fonts",
+    "upgrade:package-manager": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.packageManager='pnpm@' + packageJson.devDependencies.pnpm.replace(/^[~^]/, ''); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
+    "bump:version": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.version=new Date().toISOString().split('T')[0].replace(/-/g, '.'); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\""
   },
   "dependencies": {
     "@excalidraw/excalidraw": "0.18.0-817d8c5",
+    "localforage": "^1.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -26,6 +35,8 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
+    "pnpm": "^10.6.5",
+    "prettier": "^3.5.3",
     "typescript": "~5.8.2",
     "typescript-eslint": "^8.27.0",
     "vite": "^6.2.2"

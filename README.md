@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# Open Draw
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Open Draw** is a self-hosted integration of the latest [Excalidraw](https://excalidraw.com/) Web Component using React. It leverages:
 
-Currently, two official plugins are available:
+- [Excalidraw NPM Package](https://www.npmjs.com/package/@excalidraw/excalidraw)
+- [Excalidraw Integration Documentation](https://docs.excalidraw.com/docs/@excalidraw/excalidraw/integration)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✅ Features
 
-## Expanding the ESLint configuration
+- **No Excalidraw+ Marketing Features:** Excludes marketing features pulled by the official [Excalidraw](https://excalidraw.com/) web app and [Docker Image](https://hub.docker.com/r/excalidraw/excalidraw).  
+- **No Analytics:** No analytics tracking from the official web app and Docker image.  
+- **Local Drawing Sessions:** Drawings are saved locally in IndexedDB for persistent, offline use.  
+- **Custom Library Support:** Fully supports custom libraries.  
+- **Regular Updates:** Frequently updated to the latest Excalidraw core and related library versions.  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ❌ Limitations
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- No support for **Sharing**.  
+- No support for **Live Collaboration**.  
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Dev Setup
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Install dependencies:  
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+   ```bash
+   pnpm i
+   ```
+
+2. Start the development server:  
+
+   ```bash
+   pnpm run dev
+   ```
+
+## 📌 To-Do List
+
+- Enable Progressive Web App (PWA) support.  
+- Add Docker support.  
+- Implement CI/CD pipeline.  
+- Prepare for official release.  
+- Improve documentation.  
