@@ -18,7 +18,8 @@
     "integrate": "pnpm run upgrade:package-manager && pnpm run upgrade:libs && pnpm run prettier && pnpm run lint:fix && pnpm run build && pnpm run bump:version",
     "upgrade:libs": "pnpm up --latest && pnpm install @excalidraw/excalidraw@next && pnpm run import:fonts",
     "upgrade:package-manager": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.packageManager='pnpm@' + packageJson.devDependencies.pnpm.replace(/^[~^]/, ''); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
-    "bump:version": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.version=new Date().toISOString().split('T')[0].replace(/-/g, '.'); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\""
+    "bump:version": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.version=new Date().toISOString().split('T')[0].replace(/-/g, '.'); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
+    "print:version": "echo \"$npm_package_version\""
   },
   "dependencies": {
     "@excalidraw/excalidraw": "0.18.0-817d8c5",
