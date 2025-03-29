@@ -1,0 +1,18 @@
+# Exclude node_modules directory
+node_modules
+
+# Exclude build artifacts
+dist
+build
+
+# Exclude Git directory
+.git
+
+# Exclude Dockerfiles and related files
+Dockerfile
+.dockerignore
+.devcontainer
+
+# Exclude IDE and editor files
+.vscode
+.idea

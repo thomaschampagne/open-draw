@@ -29,7 +29,7 @@ export class AppContextImpl implements IAppContext {
       await this.stateStorage.setExcalidrawElement(drawState.elements);
       await this.stateStorage.setBinaryFiles(drawState.files);
       console.info('Draw State saved');
-    }, this.config.saveDebounceMs)
+    }, this.config.saveDebounceMs);
   }
 
   public async getInitialSavedState(): Promise<ImportedDataState | null> {
