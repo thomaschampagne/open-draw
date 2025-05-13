@@ -36,6 +36,11 @@ sh ./scripts/integrate.docker.sh
 pnpm run integrate
 ```
 
+- Sanity Checks:
+  - Verify that drawings persist after reloading the page.
+  - Confirm successful library import without errors.
+  - Ensure drawings can be saved and retrieved correctly.
+
 ## 📦 Build
 
 ### Using Docker
