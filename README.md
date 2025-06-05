@@ -33,7 +33,8 @@ sh ./scripts/integrate.docker.sh
 - Via Node.js:
 
 ```sh
-pnpm run integrate
+pnpm run integrate && \
+  pnpm run preview
 ```
 
 - Sanity Checks:
