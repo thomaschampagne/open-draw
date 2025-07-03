@@ -41,6 +41,7 @@ pnpm run integrate && \
   - Verify that drawings persist after reloading the page.
   - Confirm successful library import without errors.
   - Ensure drawings can be saved and retrieved correctly.
+  - Verify no errors raised in console logs.
 
 ## 📦 Build
 
