@@ -1,7 +1,7 @@
 {
   "name": "open-draw",
-  "version": "2025.07.17",
-  "packageManager": "pnpm@10.13.1",
+  "version": "2025.08.09",
+  "packageManager": "pnpm@10.14.0",
   "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
   "main": "index.html",
   "homepage": "https://github.com/thomaschampagne/open-draw",
@@ -15,7 +15,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier ./src/**.{ts,tsx} --write",
-    "integrate": "pnpm run upgrade:package-manager && pnpm run upgrade:libs && pnpm run prettier && pnpm run lint:fix && pnpm run build && pnpm run bump:version",
+    "integrate": "pnpm run upgrade:libs && pnpm run upgrade:package-manager && pnpm run prettier && pnpm run lint:fix && pnpm run build && pnpm run bump:version",
     "upgrade:libs": "pnpm up --latest && pnpm install @excalidraw/excalidraw@next && pnpm run import:fonts",
     "upgrade:package-manager": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.packageManager='pnpm@' + packageJson.devDependencies.pnpm.replace(/^[~^]/, ''); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
     "bump:version": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.version=new Date().toISOString().split('T')[0].replace(/-/g, '.'); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
@@ -24,22 +24,22 @@
   "dependencies": {
     "@excalidraw/excalidraw": "0.18.0-864353b",
     "localforage": "^1.10.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.31.0",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react-swc": "^3.10.2",
-    "eslint": "^9.31.0",
+    "@eslint/js": "^9.33.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
-    "pnpm": "^10.13.1",
+    "pnpm": "^10.14.0",
     "prettier": "^3.6.2",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.37.0",
-    "vite": "^7.0.5"
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.39.0",
+    "vite": "^7.1.1"
   }
 }
