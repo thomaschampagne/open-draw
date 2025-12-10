@@ -56,6 +56,7 @@ export class AppContextImpl implements IAppContext {
         // Get the library URL parameter
         const libraryUrl = params.get('addLibrary');
 
+        // Do not do anything if the URL is empty
         if (!libraryUrl) {
           return;
         }
