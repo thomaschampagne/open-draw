@@ -1,7 +1,7 @@
 {
   "name": "open-draw",
-  "version": "2025.11.04",
-  "packageManager": "pnpm@10.20.0",
+  "version": "2025.12.21",
+  "packageManager": "pnpm@10.26.1",
   "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
   "main": "index.html",
   "homepage": "https://github.com/thomaschampagne/open-draw",
@@ -16,30 +16,30 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier ./src/**.{ts,tsx} --write",
     "integrate": "pnpm run upgrade:libs && pnpm run upgrade:package-manager && pnpm run prettier && pnpm run lint:fix && pnpm run build && pnpm run bump:version",
-    "upgrade:libs": "pnpm up --latest && pnpm install @excalidraw/excalidraw@next && pnpm run import:fonts",
+    "upgrade:libs": "pnpm up --latest && pnpm run import:fonts",
     "upgrade:package-manager": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.packageManager='pnpm@' + packageJson.devDependencies.pnpm.replace(/^[~^]/, ''); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
     "bump:version": "node -e \"import { readFileSync, writeFileSync } from 'fs'; const packageJson=JSON.parse(readFileSync('package.json')); packageJson.version=new Date().toISOString().split('T')[0].replace(/-/g, '.'); writeFileSync('package.json',JSON.stringify(packageJson,null,2));\"",
     "print:version": "echo \"$npm_package_version\""
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "0.18.0-d1f3982",
+    "@excalidraw/excalidraw": "0.18.0",
     "localforage": "^1.10.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "@vitejs/plugin-react-swc": "^4.2.0",
-    "eslint": "^9.39.1",
+    "@eslint/js": "^9.39.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "eslint": "^9.39.2",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.24",
+    "eslint-plugin-react-refresh": "^0.4.26",
     "globals": "^16.5.0",
-    "pnpm": "^10.20.0",
-    "prettier": "^3.6.2",
+    "pnpm": "^10.26.1",
+    "prettier": "^3.7.4",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.3",
-    "vite": "^7.1.12"
+    "typescript-eslint": "^8.50.0",
+    "vite": "^7.3.0"
   }
 }
