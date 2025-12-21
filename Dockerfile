@@ -1,4 +1,4 @@
-ARG OCI_BASE_IMAGE=alpine:3.21
+ARG OCI_BASE_IMAGE=alpine:3.23
 ARG OCI_BASE_IMAGE_URL=https://hub.docker.com/_/alpine/
 ARG OCI_TITLE="open-draw"
 ARG OCI_DESCRIPTION="Virtual whiteboard for sketching hand-drawn like diagrams"
