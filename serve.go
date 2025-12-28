@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+  "fmt"
 	"io/fs"
 	"log"
 	"net/http"
@@ -28,7 +29,7 @@ func main() {
 	http.Handle("/", http.FileServer(http.FS(distFS)))
 
 	log.Printf("Server running at http://localhost:%s", port)
-	if err := http.ListenAndServe("127.0.0.1:" + port, nil); err != nil {
+	if err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil); err != nil {
 		log.Fatal(err)
 	}
 }
