@@ -2,7 +2,6 @@ package main
 
 import (
 	"embed"
-	"fmt"
 	"io/fs"
 	"log"
 	"net/http"
@@ -13,7 +12,7 @@ const DEFAULT_PORT = "3000"
 
 // Embed the contents of the "dist" directory into the binary.
 // This allows the files in the "dist" directory to be served directly from the embedded filesystem.
-//go:embed dist/*
+//go:embed dist/**
 var embeddedFiles embed.FS
 
 func main() {
@@ -29,7 +28,7 @@ func main() {
 	http.Handle("/", http.FileServer(http.FS(distFS)))
 
 	log.Printf("Server running at http://localhost:%s", port)
-	if err := http.ListenAndServe(fmt.Sprintf("127.0.0.1:%d", port), nil); err != nil {
+	if err := http.ListenAndServe("127.0.0.1:" + port, nil); err != nil {
 		log.Fatal(err)
 	}
 }
