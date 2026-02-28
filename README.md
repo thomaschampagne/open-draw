@@ -41,7 +41,7 @@ pnpm run integrate && \
   - Verify that drawings persist after reloading the page.
   - Confirm successful library import without errors.
   - Ensure drawings can be saved and retrieved correctly.
-  - Verify no errors raised in console logs.
+  - Verify that no errors are raised in console logs.
 
 ## 📦 Build
 
@@ -63,7 +63,7 @@ pnpm run build
 
 ### Using DevContainer
 
-Use the  `.devcontainer/devcontainer.json` spec into your IDE.
+Use the `.devcontainer/devcontainer.json` spec in your IDE.
 
 ### Running Locally
 
