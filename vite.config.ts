@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
   plugins: [react()],
   build: {
-    target: 'ES2022'
+   target: ['chrome111', 'edge111', 'firefox114', 'safari16.4']
   }
 });

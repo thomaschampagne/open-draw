@@ -7,7 +7,7 @@ import { StateStorage } from './state.storage.ts';
 import App from './App.tsx';
 
 const config: IConfig = {
-  dbName: 'open-draw',
+  dbName: 'opendraw',
   saveDebounceMs: 500
 };
 

@@ -1,6 +1,6 @@
 ARG OCI_BASE_IMAGE=alpine:3.23
 ARG OCI_BASE_IMAGE_URL=https://hub.docker.com/_/alpine/
-ARG OCI_TITLE="open-draw"
+ARG OCI_TITLE="opendraw"
 ARG OCI_DESCRIPTION="Virtual whiteboard for sketching hand-drawn like diagrams"
 ARG OCI_MAINTAINER="Thomas Champagne"
 
@@ -24,7 +24,7 @@ WORKDIR /build
 COPY serve.go .
 COPY --from=build_webapp /build/dist ./dist
 
-RUN go build -o ./open-draw serve.go
+RUN go build -o ./opendraw serve.go
 
 # ========== Build Runner ==========
 FROM ${OCI_BASE_IMAGE} AS runner
@@ -77,10 +77,10 @@ RUN apk update && apk --no-cache upgrade && \
 
 WORKDIR /app
 
-COPY --from=build_serve_bundle /build/open-draw .
+COPY --from=build_serve_bundle /build/opendraw .
 
 USER ${ALT_USER_ID}
 
 EXPOSE 3000
 
-CMD ["/app/open-draw"]
+CMD ["/app/opendraw"]

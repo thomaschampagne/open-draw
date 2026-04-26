@@ -7,7 +7,7 @@ Essential self-hosted integration of the up-to-date Excalidraw web component.
 To run Open Draw using Docker:
 
 ```sh
-docker run -dit --rm --name open-draw -p 3000:3000 ghcr.io/thomaschampagne/open-draw:latest
+docker run -dit --rm --name opendraw -p 3000:3000 ghcr.io/thomaschampagne/opendraw:latest
 ```
 
 ## ✨ Features
@@ -48,8 +48,8 @@ pnpm run integrate && \
 ### Using Docker
 
 ```sh
-docker build -t open-draw:latest . && \
-  docker run -dit --rm --name open-draw -p 3000:3000 open-draw:latest
+docker build -t opendraw:latest . && \
+  docker run -dit --rm --name opendraw -p 3000:3000 opendraw:latest
 ```
 
 ### Using Node.js with pnpm
